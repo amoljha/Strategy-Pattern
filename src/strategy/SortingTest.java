@@ -13,7 +13,7 @@ public class SortingTest {
   private static int[] largeArray;
   private static int[] veryLargeArray;
 
-  static final int TINY       = 10;
+  static final int TINY       = 5;
   static final int SMALL      = 100;
   static final int MED        = 1000;
   static final int LARGE      = 10000;
@@ -108,5 +108,15 @@ public class SortingTest {
     assertTrue(testMediumArray(sortingContext));
     assertTrue(testLargeArray(sortingContext));
     assertTrue(testVeryLargeArray(sortingContext));
+  }
+  
+  @Test
+  public void testQuickSort() throws ArrayElementException {
+    SortingContext sortingContext = new SortingContext(new QuickSort());
+    assertTrue(testTinyArray(sortingContext));
+//    assertTrue(testSmallArray(sortingContext));
+//    assertTrue(testMediumArray(sortingContext));
+//    assertTrue(testLargeArray(sortingContext));
+//    assertTrue(testVeryLargeArray(sortingContext));
   }
 }
