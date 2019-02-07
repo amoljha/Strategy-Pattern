@@ -114,9 +114,9 @@ public class SortingTest {
   public void testQuickSort() throws ArrayElementException {
     SortingContext sortingContext = new SortingContext(new QuickSort());
     assertTrue(testTinyArray(sortingContext));
-//    assertTrue(testSmallArray(sortingContext));
-//    assertTrue(testMediumArray(sortingContext));
-//    assertTrue(testLargeArray(sortingContext));
-//    assertTrue(testVeryLargeArray(sortingContext));
+    assertTrue(testSmallArray(sortingContext));
+    assertTrue(testMediumArray(sortingContext));
+    assertTrue(testLargeArray(sortingContext));
+    assertTrue(testVeryLargeArray(sortingContext));
   }
 }

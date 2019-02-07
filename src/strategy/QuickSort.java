@@ -24,13 +24,33 @@ public class QuickSort implements SortingMethod {
   }
 
   private int pivot(int[] arr, int low, int high) {
-    int pivotIndex = low;
-    int pivotElement = arr[low]; // Works because the array is guaranteed to be sorted
+    int i            = low;
+    int j            = high + 1;
+    int pivotElement = arr[low];
+   
+    while (true) {
+      while (arr[++i] < pivotElement) {
+        if (i == high) {
+          break;
+        }
+      }
 
-    while (low < high) {
+      while (pivotElement < arr[--j]) {
+        if (j == low) {
+          break;
+        }
+      }
+      
+      if (i >= j) {
+        break;
+      }
+      
+      SortHelper.swap(arr, i, j);
     }
-    SortHelper.swap(arr, low, pivotIndex);
-    return low;
+
+    SortHelper.swap(arr, low, j);
+    
+    return j;
   }
 
 }
